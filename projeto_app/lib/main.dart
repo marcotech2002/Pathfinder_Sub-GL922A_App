@@ -7,7 +7,7 @@ void main()
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'app',
+      title: '',
     )
   );
 }

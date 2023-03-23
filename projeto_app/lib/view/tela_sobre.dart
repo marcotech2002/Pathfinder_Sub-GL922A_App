@@ -2,16 +2,21 @@
 
 import 'package:flutter/material.dart';
 
-class TelaSobre extends StatefulWidget {
+class TelaSobre extends StatefulWidget 
+{
   const TelaSobre({super.key});
 
   @override
   State<TelaSobre> createState() => _TelaSobreState();
 }
 
-class _TelaSobreState extends State<TelaSobre> {
+class _TelaSobreState extends State<TelaSobre> 
+{
+  
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return const Placeholder();
   }
 }

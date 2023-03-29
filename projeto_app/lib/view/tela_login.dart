@@ -21,7 +21,39 @@ class _TelaLoginState extends State<TelaLogin>
       body: SingleChildScrollView(
         child: Column(
           children: <Widget> [
-            
+            Text("Login",
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+                fontSize: 50,
+              ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Email',
+                labelStyle: const TextStyle(
+                  fontSize: 20,
+                ),
+                ),
+            ),
+            TextField(
+              decoration: InputDecoration(
+                labelText: 'Senha',
+                labelStyle: const TextStyle(
+                  fontSize: 20,
+                ),
+                ),
+            ),
+            ElevatedButton(
+              onPressed: ()
+              {
+
+              }, 
+              child: Text('Confirmar',
+                style: const TextStyle(
+                  fontSize: 25,
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -89,5 +89,28 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+
+  fonts:
+    - family: ChivoMono
+      fonts:
+        - asset: assets/fonts/ChivoMono-Black.ttf
+        - asset: assets/fonts/ChivoMono-BlackItalic.ttf
+        - asset: assets/fonts/ChivoMono-Bold.ttf
+        - asset: assets/fonts/ChivoMono-BoldItalic.ttf
+        - asset: assets/fonts/ChivoMono-ExtraBold.ttf
+        - asset: assets/fonts/ChivoMono-ExtraBoldItalic.ttf
+        - asset: assets/fonts/ChivoMono-ExtraLight.ttf
+        - asset: assets/fonts/ChivoMono-ExtraLightItalic.ttf
+        - asset: assets/fonts/ChivoMono-Italic.ttf
+        - asset: assets/fonts/ChivoMono-Light.ttf
+        - asset: assets/fonts/ChivoMono-LightItalic.ttf
+        - asset: assets/fonts/ChivoMono-Medium.ttf
+        - asset: assets/fonts/ChivoMono-MediumItalic.ttf
+        - asset: assets/fonts/ChivoMono-Regular.ttf
+        - asset: assets/fonts/ChivoMono-SemiBold.ttf
+        - asset: assets/fonts/ChivoMono-SemiBoldItalic.ttf
+        - asset: assets/fonts/ChivoMono-Thin.ttf
+        - asset: assets/fonts/ChivoMono-ThinItalic.ttf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

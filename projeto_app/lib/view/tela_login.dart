@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:projeto_app/style/palette.dart';
+import 'package:projeto_app/style/font.dart';
 
 class TelaLogin extends StatefulWidget {
   const TelaLogin({super.key});
@@ -16,51 +17,57 @@ class _TelaLoginState extends State<TelaLogin> {
     return Scaffold(
       backgroundColor: Palette().Primary,
       body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Image.asset('assets/images/logo.png'),
-            Text(
-              "Login",
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 50,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Image.asset('assets/images/logo.png'),
+              Text(
+                "Login",
+                textAlign: TextAlign.center,
+                style: Font().TitleFont
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 100, bottom: 50),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  labelStyle: const TextStyle(
-                    fontSize: 20,
+              Padding(
+                padding: const EdgeInsets.fromLTRB(400,0,400,0),
+                child: Column(
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        labelStyle: Font().NormalFont
+                      ),
+                    ),
+                    SizedBox(
+                      height: 25,
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        labelText: 'Senha',
+                        labelStyle: Font().NormalFont
+                      ),
+                    ),
+                    SizedBox(
+                      height: 100,
+                    ),
+                  ]
+                ),
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 50,
+                    vertical: 25
                   ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () {},
+                child: Text(
+                  'Confirmar',
+                  style: Font().ButtonFont
                 ),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 100),
-              child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'Senha',
-                  labelStyle: const TextStyle(
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Palette().Secondary,
-              ),
-              onPressed: () {},
-              child: Text(
-                'Confirmar',
-                style: const TextStyle(
-                  fontSize: 25,
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

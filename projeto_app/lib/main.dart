@@ -10,7 +10,7 @@ void main()
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Olá',
-      home: TelaCadastro(),
+      home: TelaLogin(),
     )
   );
 }

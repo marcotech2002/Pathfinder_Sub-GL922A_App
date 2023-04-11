@@ -85,6 +85,10 @@ class _TelaCadastroState extends State<TelaCadastro>
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical:25,
+                        horizontal:50,
+                      ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () {},
@@ -96,10 +100,14 @@ class _TelaCadastroState extends State<TelaCadastro>
                     ),
                   ),
                   SizedBox(
-                    width: 100,
+                    width: 50,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical:25,
+                        horizontal:50,
+                      ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () {},

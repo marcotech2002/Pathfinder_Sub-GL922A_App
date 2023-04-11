@@ -55,6 +55,10 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical:25,
+                        horizontal:50,
+                      ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () {},
@@ -66,10 +70,14 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                     ),
                   ),
                   SizedBox(
-                    width: 100,
+                    width: 50,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical:25,
+                        horizontal:50,
+                      ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () {},

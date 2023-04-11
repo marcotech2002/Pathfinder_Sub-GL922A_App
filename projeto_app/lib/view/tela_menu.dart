@@ -38,6 +38,10 @@ class _TelaMenuState extends State<TelaMenu>
                   children: [
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical:25,
+                          horizontal:50,
+                        ),
                         backgroundColor: Palette().Secondary,
                       ),
                       onPressed: () {},
@@ -49,10 +53,14 @@ class _TelaMenuState extends State<TelaMenu>
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 35,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical:25,
+                          horizontal:50,
+                        ),
                         backgroundColor: Palette().Secondary,
                       ),
                       onPressed: () {},
@@ -64,10 +72,14 @@ class _TelaMenuState extends State<TelaMenu>
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 35,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical:25,
+                          horizontal:50,
+                        ),
                         backgroundColor: Palette().Secondary,
                       ),
                       onPressed: () {},
@@ -79,10 +91,14 @@ class _TelaMenuState extends State<TelaMenu>
                       ),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 35,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical:25,
+                          horizontal:50,
+                        ),
                         backgroundColor: Palette().Secondary,
                       ),
                       onPressed: () {},
@@ -94,10 +110,14 @@ class _TelaMenuState extends State<TelaMenu>
                       ),
                     ),
                     SizedBox(
-                      height: 50,
+                      height: 75,
                     ),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical:25,
+                          horizontal:50,
+                        ),
                         backgroundColor: Palette().Secondary,
                       ),
                       onPressed: () {},

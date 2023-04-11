@@ -31,7 +31,7 @@ class _TelaCadastroState extends State<TelaCadastro>
               ),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(100,0,100,0),
+              padding: const EdgeInsets.fromLTRB(100,50,100,25),
               child: Column(
                 children: [
                   TextField(
@@ -54,7 +54,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                     ),
                   ),
                   SizedBox(
-                    height: 25,
+                    height: 50,
                   ),
                   TextField(
                     decoration: InputDecoration(
@@ -65,12 +65,13 @@ class _TelaCadastroState extends State<TelaCadastro>
                     ),
                   ),
                   SizedBox(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        labelText: 'Confirmar Senha',
-                        labelStyle: const TextStyle(
-                          fontSize: 20,
-                        ),
+                    height: 25,
+                  ),
+                  TextField(
+                    decoration: InputDecoration(
+                      labelText: 'Confirmar Senha',
+                      labelStyle: const TextStyle(
+                        fontSize: 20,
                       ),
                     ),
                   ),
@@ -84,6 +85,10 @@ class _TelaCadastroState extends State<TelaCadastro>
                 children: [
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical:25,
+                        horizontal:50,
+                      ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () {},
@@ -95,10 +100,14 @@ class _TelaCadastroState extends State<TelaCadastro>
                     ),
                   ),
                   SizedBox(
-                    width: 100,
+                    width: 50,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        vertical:25,
+                        horizontal:50,
+                      ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () {},

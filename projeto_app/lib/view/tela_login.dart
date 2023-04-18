@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_app/style/palette.dart';
 import 'package:projeto_app/style/font.dart';
+import 'package:projeto_app/view/tela_cadastro.dart';
+import 'package:projeto_app/view/tela_recuperacao.dart';
 
 class TelaLogin extends StatefulWidget {
   const TelaLogin({super.key});
@@ -65,6 +67,49 @@ class _TelaLoginState extends State<TelaLogin> {
                   'Confirmar',
                   style: Font().ButtonFont
                 ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TelaRecuperacao())
+                      );
+                    }, 
+                    child: const Text(
+                      "Clique aqui caso tenha esquecido sua senha",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: "ChivoMono", 
+                        fontSize: 10
+                      )
+                    ),
+                  ),  
+                  SizedBox(
+                    width: 50,
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => TelaCadastro())
+                      );
+                    }, 
+                    child: const Text(
+                      "Clique aqui para realizar seu cadastro",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: "ChivoMono", 
+                        fontSize: 10
+                      )
+                    ),
+                  )  
+                ],
               ),
             ],
           ),

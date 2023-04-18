@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../style/font.dart';
 import '../style/palette.dart';
 
 class TelaCadastro extends StatefulWidget 
@@ -26,9 +27,7 @@ class _TelaCadastroState extends State<TelaCadastro>
             Text(
               "Cadastro",
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 50,
-              ),
+              style: Font().TitleFont
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(100,50,100,25),
@@ -37,9 +36,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Email',
-                      labelStyle: const TextStyle(
-                        fontSize: 20,
-                      ),
+                      labelStyle: Font().NormalFont
                     ),
                   ),
                   SizedBox(
@@ -48,9 +45,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Nome',
-                      labelStyle: const TextStyle(
-                        fontSize: 20,
-                      ),
+                      labelStyle: Font().NormalFont
                     ),
                   ),
                   SizedBox(
@@ -59,9 +54,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Senha',
-                      labelStyle: const TextStyle(
-                        fontSize: 20,
-                      ),
+                      labelStyle: Font().NormalFont
                     ),
                   ),
                   SizedBox(
@@ -70,9 +63,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Confirmar Senha',
-                      labelStyle: const TextStyle(
-                        fontSize: 20,
-                      ),
+                      labelStyle: Font().NormalFont
                     ),
                   ),
                 ]
@@ -113,9 +104,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                     onPressed: () {},
                     child: Text(
                       'Cancelar',
-                      style: const TextStyle(
-                        fontSize: 25,
-                      ),
+                      style: Font().ButtonFont
                     ),
                   ),
                 ],

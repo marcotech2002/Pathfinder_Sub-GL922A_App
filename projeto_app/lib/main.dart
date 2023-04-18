@@ -11,7 +11,7 @@ void main()
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Olá',
+      title: 'Pathfinder',
       home: TelaLogin(),
     )
   );

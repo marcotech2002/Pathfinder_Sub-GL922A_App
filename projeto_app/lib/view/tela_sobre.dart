@@ -30,6 +30,67 @@ class _TelaSobreState extends State<TelaSobre>
                 textAlign: TextAlign.center,
                 style: Font().TitleFont
               ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Criadores:",
+                style: Font().NormalFont
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Image.asset('assets/images/logo.png'),
+              Text(
+                "Marco Antônio Porsch de Almeida",
+                textAlign: TextAlign.center,
+                style: Font().NormalFont
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Image.asset('assets/images/logo.png'),
+              Text(
+                "Marcos Vinicius Alves da Rocha",
+                textAlign: TextAlign.center,
+                style: Font().NormalFont
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Tema escolhido: IoT",
+                textAlign: TextAlign.center,
+                style: Font().NormalFont
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Objetivo: Uma forma de integrar\ndispositivos com internet das coisas",
+                textAlign: TextAlign.center,
+                style: Font().NormalFont
+              ),
+              SizedBox(
+                height: 70,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 50,
+                    vertical: 25
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () {},
+                child: Text(
+                  'Voltar',
+                  style: Font().ButtonFont
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
             ],
           ),
         ),

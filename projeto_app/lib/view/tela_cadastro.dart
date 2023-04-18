@@ -78,24 +78,26 @@ class _TelaCadastroState extends State<TelaCadastro>
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:50,
+                        horizontal:35,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     child: Text(
                       'Confirmar',
                       style: Font().ButtonFont
                     ),
                   ),
                   SizedBox(
-                    width: 50,
+                    width: 25,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:50,
+                        horizontal:35,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),

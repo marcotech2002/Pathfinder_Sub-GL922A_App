@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../style/font.dart';
 import '../style/palette.dart';
 
 class TelaRecuperacao extends StatefulWidget 
@@ -26,9 +27,7 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
             Text(
               "Recuperação de Senha",
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 50,
-              ),
+              style: Font().TitleFont
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(100,100,100,50),
@@ -37,9 +36,7 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                   TextField(
                     decoration: InputDecoration(
                       labelText: 'Email',
-                      labelStyle: const TextStyle(
-                        fontSize: 20,
-                      ),
+                      labelStyle: Font().NormalFont
                     ),
                   ),
                   SizedBox(
@@ -64,9 +61,7 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                     onPressed: () {},
                     child: Text(
                       'Confirmar',
-                      style: const TextStyle(
-                        fontSize: 25,
-                      ),
+                      style: Font().ButtonFont
                     ),
                   ),
                   SizedBox(
@@ -80,12 +75,12 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {},
+                    onPressed: () { 
+                      Navigator.pop(context);
+                    },
                     child: Text(
                       'Cancelar',
-                      style: const TextStyle(
-                        fontSize: 25,
-                      ),
+                      style: Font().ButtonFont
                     ),
                   ),
                 ],

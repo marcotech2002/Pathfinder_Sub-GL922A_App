@@ -82,7 +82,7 @@ class _TelaLoginState extends State<TelaLogin> {
                       );
                     }, 
                     child: const Text(
-                      "Clique aqui caso tenha esquecido sua senha",
+                      "Esqueci a senha",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: "ChivoMono", 
@@ -101,7 +101,7 @@ class _TelaLoginState extends State<TelaLogin> {
                       );
                     }, 
                     child: const Text(
-                      "Clique aqui para realizar seu cadastro",
+                      "Realizar seu cadastro",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontFamily: "ChivoMono", 

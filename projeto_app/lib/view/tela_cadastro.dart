@@ -85,9 +85,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                     onPressed: () {},
                     child: Text(
                       'Confirmar',
-                      style: const TextStyle(
-                        fontSize: 25,
-                      ),
+                      style: Font().ButtonFont
                     ),
                   ),
                   SizedBox(
@@ -101,7 +99,9 @@ class _TelaCadastroState extends State<TelaCadastro>
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {},
+                    onPressed: () { 
+                      Navigator.pop(context);
+                    },
                     child: Text(
                       'Cancelar',
                       style: Font().ButtonFont

@@ -1,7 +1,7 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=C:\flutter\sdk"
-export "FLUTTER_APPLICATION_PATH=C:\Users\aarju\OneDrive\Documentos\flut\projeto\Pathfinder_Sub-GL922A_App\projeto_app"
+export "FLUTTER_APPLICATION_PATH=C:\Users\marco\source\repos\Pathfinder_Sub-GL922A_App\projeto_app"
 export "COCOAPODS_PARALLEL_CODE_SIGN=true"
 export "FLUTTER_BUILD_DIR=build"
 export "FLUTTER_BUILD_NAME=1.0.0"

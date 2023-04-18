@@ -8,8 +8,10 @@ class Font {
     color: Palette().Tertiary);
   final _normalFont = TextStyle(fontFamily: "ChivoMono", fontSize: 20, color: Palette().Tertiary);
   final _buttonFont = TextStyle(fontFamily: "ChivoMono", fontSize: 20, color: Palette().Primary);
+  final _menuFont = TextStyle(fontFamily: "ChivoMono", fontSize: 40, color: Palette().Tertiary);
 
   TextStyle get TitleFont => _titleFont;
   TextStyle get NormalFont => _normalFont;
   TextStyle get ButtonFont => _buttonFont;
+  TextStyle get MenuFont => _menuFont;
 }

@@ -85,6 +85,7 @@ class _TelaLoginState extends State<TelaLogin> {
                       "Esqueci a senha",
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                        decoration: TextDecoration.underline,
                         fontFamily: "ChivoMono", 
                         fontSize: 10
                       )
@@ -104,6 +105,7 @@ class _TelaLoginState extends State<TelaLogin> {
                       "Realizar seu cadastro",
                       textAlign: TextAlign.center,
                       style: TextStyle(
+                        decoration: TextDecoration.underline,
                         fontFamily: "ChivoMono", 
                         fontSize: 10
                       )

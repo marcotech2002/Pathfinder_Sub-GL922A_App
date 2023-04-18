@@ -1,41 +1,39 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../style/font.dart';
 import '../style/palette.dart';
 
-class TelaCadastro extends StatefulWidget 
-{
-  const TelaCadastro({super.key});
+class TelaAlteracao extends StatefulWidget {
+  const TelaAlteracao({super.key});
 
   @override
-  State<TelaCadastro> createState() => _TelaCadastroState();
+  State<TelaAlteracao> createState() => _TelaAlteracaoState();
 }
 
-class _TelaCadastroState extends State<TelaCadastro> 
-{
+class _TelaAlteracaoState extends State<TelaAlteracao> {
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette().Primary,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Image.asset('assets/images/logo.png'),
             Text(
-              "Cadastro",
+              "Alteração de Senha",
               textAlign: TextAlign.center,
               style: Font().TitleFont
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(100,50,100,25),
+              padding: const EdgeInsets.fromLTRB(100,100,100,50),
               child: Column(
                 children: [
                   TextField(
                     decoration: InputDecoration(
-                      labelText: 'Email',
+                      labelText: 'Senha antiga',
                       labelStyle: Font().NormalFont
                     ),
                   ),
@@ -44,16 +42,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                   ),
                   TextField(
                     decoration: InputDecoration(
-                      labelText: 'Nome',
-                      labelStyle: Font().NormalFont
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  TextField(
-                    decoration: InputDecoration(
-                      labelText: 'Senha',
+                      labelText: 'Nova senha',
                       labelStyle: Font().NormalFont
                     ),
                   ),
@@ -62,9 +51,12 @@ class _TelaCadastroState extends State<TelaCadastro>
                   ),
                   TextField(
                     decoration: InputDecoration(
-                      labelText: 'Confirmar Senha',
+                      labelText: 'Confirmar nova senha',
                       labelStyle: Font().NormalFont
                     ),
+                  ),
+                  SizedBox(
+                    height: 25,
                   ),
                 ]
               ),
@@ -78,26 +70,24 @@ class _TelaCadastroState extends State<TelaCadastro>
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:35,
+                        horizontal:50,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+                    onPressed: () {},
                     child: Text(
                       'Confirmar',
                       style: Font().ButtonFont
                     ),
                   ),
                   SizedBox(
-                    width: 25,
+                    width: 50,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:35,
+                        horizontal:50,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),

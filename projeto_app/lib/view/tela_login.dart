@@ -30,7 +30,7 @@ class _TelaLoginState extends State<TelaLogin> {
                 style: Font().TitleFont
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(400,0,400,0),
+                padding: const EdgeInsets.fromLTRB(50,0,50,0),
                 child: Column(
                   children: [
                     TextField(

@@ -26,7 +26,6 @@ class _TelaConfigState extends State<TelaConfig>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image.asset('assets/images/logo.png'),
               Text(
                 "Configurações",
                 textAlign: TextAlign.center,

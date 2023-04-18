@@ -1,32 +1,34 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../style/font.dart';
 import '../style/palette.dart';
 
-class TelaSobre extends StatefulWidget 
+
+
+class TelaConfig extends StatefulWidget 
 {
-  const TelaSobre({super.key});
+  const TelaConfig({super.key});
 
   @override
-  State<TelaSobre> createState() => _TelaSobreState();
+  State<TelaConfig> createState() => _TelaConfigState();
 }
 
-class _TelaSobreState extends State<TelaSobre> 
+class _TelaConfigState extends State<TelaConfig> 
 {
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette().Primary,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset('assets/images/logo.png'),
               Text(
-                "Sobre",
+                "Configurações",
                 textAlign: TextAlign.center,
                 style: Font().TitleFont
               ),

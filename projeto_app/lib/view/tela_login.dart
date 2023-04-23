@@ -7,14 +7,19 @@ import 'package:projeto_app/view/tela_cadastro.dart';
 import 'package:projeto_app/view/tela_menu.dart';
 import 'package:projeto_app/view/tela_recuperacao.dart';
 
-class TelaLogin extends StatefulWidget {
+class TelaLogin extends StatefulWidget 
+{
   const TelaLogin({super.key});
 
   @override
   State<TelaLogin> createState() => _TelaLoginState();
 }
 
-class _TelaLoginState extends State<TelaLogin> {
+class _TelaLoginState extends State<TelaLogin> 
+{
+  static var txtEmail = TextEditingController();
+  static var txtSenha = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,6 +40,7 @@ class _TelaLoginState extends State<TelaLogin> {
                 child: Column(
                   children: [
                     TextField(
+                      controller: txtEmail,
                       decoration: InputDecoration(
                         labelText: 'Email',
                         labelStyle: Font().NormalFont
@@ -44,6 +50,7 @@ class _TelaLoginState extends State<TelaLogin> {
                       height: 25,
                     ),
                     TextField(
+                      controller: txtSenha,
                       decoration: InputDecoration(
                         labelText: 'Senha',
                         labelStyle: Font().NormalFont
@@ -63,11 +70,21 @@ class _TelaLoginState extends State<TelaLogin> {
                   ),
                   backgroundColor: Palette().Secondary,
                 ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => TelaMenu())
-                  );
+                onPressed: () 
+                {
+                  if(txtEmail.text.isEmpty||txtSenha.text.isEmpty)
+                  {
+                    errorMessage('Um ou mais campos não preenchidos');
+                  }
+                  else
+                  {
+                    clearTexts();
+                      
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TelaMenu())
+                    );
+                  }
                 },
                 child: Text(
                   'Confirmar',
@@ -81,7 +98,10 @@ class _TelaLoginState extends State<TelaLogin> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   TextButton(
-                    onPressed: () {
+                    onPressed: () 
+                    {
+                      clearTexts();
+                      
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => TelaRecuperacao())
@@ -101,7 +121,10 @@ class _TelaLoginState extends State<TelaLogin> {
                     width: 50,
                   ),
                   TextButton(
-                    onPressed: () {
+                    onPressed: () 
+                    {
+                      clearTexts();
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(builder: (context) => TelaCadastro())
@@ -123,6 +146,26 @@ class _TelaLoginState extends State<TelaLogin> {
           ),
         ),
       ),
+    );
+  }
+
+  clearTexts()
+  {
+    txtEmail.text = '';
+    txtSenha.text = '';
+  }
+
+  errorMessage(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Error,
+      )
     );
   }
 }

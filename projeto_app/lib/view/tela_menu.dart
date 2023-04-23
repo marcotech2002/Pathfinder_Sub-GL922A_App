@@ -2,6 +2,11 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:projeto_app/view/tela_alteracao.dart';
+import 'package:projeto_app/view/tela_conectar.dart';
+import 'package:projeto_app/view/tela_configuracoes.dart';
+import 'package:projeto_app/view/tela_listar.dart';
+import 'package:projeto_app/view/tela_sobre.dart';
 
 import '../style/font.dart';
 import '../style/palette.dart';
@@ -23,7 +28,7 @@ class _TelaMenuState extends State<TelaMenu>
       appBar: AppBar(
         backgroundColor: Palette().Primary,
         title: Text(
-          "Menu",
+          "Pathfinder",
           style: Font().MenuFont
         ),
         // actions: <Widget>[
@@ -106,16 +111,20 @@ class _TelaMenuState extends State<TelaMenu>
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           vertical: 60,
-                          horizontal: 50,
+                          horizontal: 80,
                         ),
                         backgroundColor: Palette().Secondary,
                       ),
-                      onPressed: () {},
+                      onPressed: () 
+                      {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TelaConectar())
+                        );
+                      },
                       child: Text(
-                        'Opção 1',
-                        style: const TextStyle(
-                          fontSize: 35,
-                        ),
+                        'Conectar',
+                        style: Font().ButtonFont,
                       ),
                     ),
                     SizedBox(
@@ -125,22 +134,26 @@ class _TelaMenuState extends State<TelaMenu>
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           vertical: 60,
-                          horizontal: 50,
+                          horizontal: 60,
                         ),
                         backgroundColor: Palette().Secondary,
                       ),
-                      onPressed: () {},
+                      onPressed: () 
+                      {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TelaLista())
+                        );
+                      },
                       child: Text(
-                        'Opção 2',
-                        style: const TextStyle(
-                          fontSize: 35,
-                        ),
+                        'Dispositivos',
+                        style: Font().ButtonFont,
                       ),
                     ),
                   ],
                 ),
               ),
-              Padding(padding: const EdgeInsets.fromLTRB(0,25,0,25),
+              Padding(padding: const EdgeInsets.fromLTRB(0,0,0,25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -148,16 +161,20 @@ class _TelaMenuState extends State<TelaMenu>
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           vertical: 60,
-                          horizontal: 50,
+                          horizontal: 98,
                         ),
                         backgroundColor: Palette().Secondary,
                       ),
-                      onPressed: () {},
+                      onPressed: () 
+                      {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TelaSobre())
+                        );
+                      },
                       child: Text(
-                        'Opção 3',
-                        style: const TextStyle(
-                          fontSize: 35,
-                        ),
+                        'Sobre',
+                        style: Font().ButtonFont,
                       ),
                     ),
                     SizedBox(
@@ -167,22 +184,26 @@ class _TelaMenuState extends State<TelaMenu>
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           vertical: 60,
-                          horizontal: 50,
+                          horizontal: 54,
                         ),
                         backgroundColor: Palette().Secondary,
                       ),
-                      onPressed: () {},
+                      onPressed: () 
+                      {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TelaAlteracao())
+                        );
+                      },
                       child: Text(
-                        'Opção 4',
-                        style: const TextStyle(
-                          fontSize: 35,
-                        ),
+                        'Alterar Senha',
+                        style: Font().ButtonFont,
                       ),
                     ),
                   ],
                 ),
               ),
-              Padding(padding: const EdgeInsets.fromLTRB(0,25,0,25),
+              Padding(padding: const EdgeInsets.fromLTRB(0,0,0,25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -190,16 +211,20 @@ class _TelaMenuState extends State<TelaMenu>
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           vertical: 60,
-                          horizontal: 50,
+                          horizontal: 55,
                         ),
                         backgroundColor: Palette().Secondary,
                       ),
-                      onPressed: () {},
+                      onPressed: () 
+                      {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TelaConfig())
+                        );
+                      },
                       child: Text(
-                        'Opção 5',
-                        style: const TextStyle(
-                          fontSize: 35,
-                        ),
+                        'Configurações',
+                        style: Font().ButtonFont,
                       ),
                     ),
                     SizedBox(
@@ -209,40 +234,20 @@ class _TelaMenuState extends State<TelaMenu>
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
                           vertical: 60,
-                          horizontal: 50,
+                          horizontal: 108,
                         ),
                         backgroundColor: Palette().Secondary,
                       ),
-                      onPressed: () {},
+                      onPressed: () 
+                      {
+                        Navigator.pop(context);
+                      },
                       child: Text(
-                        'Opção 6',
-                        style: const TextStyle(
-                          fontSize: 35,
-                        ),
+                        'Sair',
+                        style: Font().ButtonFont,
                       ),
                     ),
                   ],
-                ),
-              ),
-              SizedBox(
-                height: 35,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 25,
-                    horizontal: 60, 
-                  ),
-                  backgroundColor: Palette().Secondary,
-                ),
-                onPressed: () {
-                  Navigator.pop(context);
-                }, 
-                child: Text(
-                  'Sair',
-                  style: const TextStyle(
-                    fontSize: 35,
-                  ),
                 ),
               ),
               SizedBox(
@@ -253,121 +258,5 @@ class _TelaMenuState extends State<TelaMenu>
         ),
       ),
     );
-      // backgroundColor: Palette().Primary,
-      // body: SingleChildScrollView(
-      //   child: Center(
-      //     child: Column(
-      //       children: <Widget>[
-      //         Image.asset('assets/images/logo.png'),
-      //         Text(
-      //           "Menu",
-      //           textAlign: TextAlign.center,
-      //           style: const TextStyle(
-      //             fontSize: 50,
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.fromLTRB(0,50,0,100),
-      //           child: Column(
-      //             children: [
-      //               ElevatedButton(
-      //                 style: ElevatedButton.styleFrom(
-      //                   padding: EdgeInsets.symmetric(
-      //                     vertical:25,
-      //                     horizontal:50,
-      //                   ),
-      //                   backgroundColor: Palette().Secondary,
-      //                 ),
-      //                 onPressed: () {},
-      //                 child: Text(
-      //                   'Opção 1',
-      //                   style: const TextStyle(
-      //                     fontSize: 35,
-      //                   ),
-      //                 ),
-      //               ),
-      //               SizedBox(
-      //                 height: 35,
-      //               ),
-      //               ElevatedButton(
-      //                 style: ElevatedButton.styleFrom(
-      //                   padding: EdgeInsets.symmetric(
-      //                     vertical:25,
-      //                     horizontal:50,
-      //                   ),
-      //                   backgroundColor: Palette().Secondary,
-      //                 ),
-      //                 onPressed: () {},
-      //                 child: Text(
-      //                   'Opção 2',
-      //                   style: const TextStyle(
-      //                     fontSize: 35,
-      //                   ),
-      //                 ),
-      //               ),
-      //               SizedBox(
-      //                 height: 35,
-      //               ),
-      //               ElevatedButton(
-      //                 style: ElevatedButton.styleFrom(
-      //                   padding: EdgeInsets.symmetric(
-      //                     vertical:25,
-      //                     horizontal:50,
-      //                   ),
-      //                   backgroundColor: Palette().Secondary,
-      //                 ),
-      //                 onPressed: () {},
-      //                 child: Text(
-      //                   'Opção 3',
-      //                   style: const TextStyle(
-      //                     fontSize: 35,
-      //                   ),
-      //                 ),
-      //               ),
-      //               SizedBox(
-      //                 height: 35,
-      //               ),
-      //               ElevatedButton(
-      //                 style: ElevatedButton.styleFrom(
-      //                   padding: EdgeInsets.symmetric(
-      //                     vertical:25,
-      //                     horizontal:50,
-      //                   ),
-      //                   backgroundColor: Palette().Secondary,
-      //                 ),
-      //                 onPressed: () {},
-      //                 child: Text(
-      //                   'Opção 4',
-      //                   style: const TextStyle(
-      //                     fontSize: 35,
-      //                   ),
-      //                 ),
-      //               ),
-      //               SizedBox(
-      //                 height: 75,
-      //               ),
-      //               ElevatedButton(
-      //                 style: ElevatedButton.styleFrom(
-      //                   padding: EdgeInsets.symmetric(
-      //                     vertical:25,
-      //                     horizontal:50,
-      //                   ),
-      //                   backgroundColor: Palette().Secondary,
-      //                 ),
-      //                 onPressed: () {},
-      //                 child: Text(
-      //                   'Sair',
-      //                   style: const TextStyle(
-      //                     fontSize: 35,
-      //                   ),
-      //                 ),
-      //               ),
-      //             ]
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ),
-      // ),
   }
 }

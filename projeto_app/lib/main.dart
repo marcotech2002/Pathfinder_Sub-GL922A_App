@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:projeto_app/view/tela_splash.dart';
-import 'view/tela_login.dart';
 
 void main() 
 {

@@ -15,6 +15,11 @@ class TelaCadastro extends StatefulWidget
 
 class _TelaCadastroState extends State<TelaCadastro> 
 {
+  static var txtEmail = TextEditingController();
+  static var txtNome = TextEditingController();
+  static var txtSenha = TextEditingController();
+  static var txtSenhaConf = TextEditingController();
+
   @override
   Widget build(BuildContext context) 
   {
@@ -34,6 +39,7 @@ class _TelaCadastroState extends State<TelaCadastro>
               child: Column(
                 children: [
                   TextField(
+                    controller: txtEmail,
                     decoration: InputDecoration(
                       labelText: 'Email',
                       labelStyle: Font().NormalFont
@@ -43,6 +49,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                     height: 25,
                   ),
                   TextField(
+                    controller: txtNome,
                     decoration: InputDecoration(
                       labelText: 'Nome',
                       labelStyle: Font().NormalFont
@@ -52,6 +59,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                     height: 50,
                   ),
                   TextField(
+                    controller: txtSenha,
                     decoration: InputDecoration(
                       labelText: 'Senha',
                       labelStyle: Font().NormalFont
@@ -61,6 +69,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                     height: 25,
                   ),
                   TextField(
+                    controller: txtSenhaConf,
                     decoration: InputDecoration(
                       labelText: 'Confirmar Senha',
                       labelStyle: Font().NormalFont
@@ -82,8 +91,26 @@ class _TelaCadastroState extends State<TelaCadastro>
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
+                    onPressed: () 
+                    {
+                      if(!(txtEmail.text.isEmpty||txtEmail.text.isEmpty||txtSenha.text.isEmpty||txtSenhaConf.text.isEmpty))
+                      {
+                        if(txtSenha.text == txtSenhaConf.text)
+                        {
+                          message('Cadastro realizado com sucesso');
+                          clearTexts();
+                          
+                          Navigator.pop(context);
+                        }
+                        else
+                        {
+                          errorMessage('As senhas não coincidem');
+                        }
+                      }
+                      else
+                      {
+                        errorMessage('Campos não preenchidos');
+                      }
                     },
                     child: Text(
                       'Confirmar',
@@ -101,7 +128,10 @@ class _TelaCadastroState extends State<TelaCadastro>
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () { 
+                    onPressed: () 
+                    { 
+                      clearTexts();
+                      
                       Navigator.pop(context);
                     },
                     child: Text(
@@ -115,6 +145,43 @@ class _TelaCadastroState extends State<TelaCadastro>
           ],
         ),
       ),
+    );
+  }
+
+  clearTexts()
+  {
+    txtEmail.text = '';
+    txtNome.text = '';
+    txtSenha.text = '';
+    txtSenhaConf.text = '';
+  }
+
+  //mensagem
+  errorMessage(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Error,
+      )
+    );
+  }
+
+  message(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Tertiary,
+      )
     );
   }
 }

@@ -15,6 +15,8 @@ class TelaRecuperacao extends StatefulWidget
 
 class _TelaRecuperacaoState extends State<TelaRecuperacao> 
 {
+  static var txtEmail = TextEditingController();
+
   @override
   Widget build(BuildContext context)
   {
@@ -34,6 +36,7 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
               child: Column(
                 children: [
                   TextField(
+                    controller: txtEmail,
                     decoration: InputDecoration(
                       labelText: 'Email',
                       labelStyle: Font().NormalFont
@@ -58,8 +61,19 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
+                    onPressed: () 
+                    {
+                      if(txtEmail.text.isEmpty)
+                      {
+                        errorMessage('Email não informado');
+                      }
+                      else
+                      {
+                        message('Verifique seu Email');
+                        txtEmail.text = '';
+
+                        Navigator.pop(context);
+                      }
                     },
                     child: Text(
                       'Confirmar',
@@ -77,7 +91,10 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () { 
+                    onPressed: () 
+                    { 
+                      txtEmail.text = '';
+                      
                       Navigator.pop(context);
                     },
                     child: Text(
@@ -91,6 +108,34 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
           ],
         ),
       ),
+    );
+  }
+
+  errorMessage(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Error,
+      )
+    );
+  }
+
+  message(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Tertiary,
+      )
     );
   }
 }

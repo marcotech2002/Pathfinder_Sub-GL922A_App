@@ -7,14 +7,20 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import '../style/font.dart';
 import '../style/palette.dart';
 
-class TelaAlteracao extends StatefulWidget {
+class TelaAlteracao extends StatefulWidget 
+{
   const TelaAlteracao({super.key});
 
   @override
   State<TelaAlteracao> createState() => _TelaAlteracaoState();
 }
 
-class _TelaAlteracaoState extends State<TelaAlteracao> {
+class _TelaAlteracaoState extends State<TelaAlteracao> 
+{
+  static var txtSenha = TextEditingController();
+  static var txtSenhaNov = TextEditingController();
+  static var txtSenhaConf = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +38,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao> {
               child: Column(
                 children: [
                   TextField(
+                    controller: txtSenha,
                     decoration: InputDecoration(
                       labelText: 'Senha antiga',
                       labelStyle: Font().NormalFont
@@ -41,6 +48,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao> {
                     height: 25,
                   ),
                   TextField(
+                    controller: txtSenhaNov,
                     decoration: InputDecoration(
                       labelText: 'Nova senha',
                       labelStyle: Font().NormalFont
@@ -50,6 +58,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao> {
                     height: 25,
                   ),
                   TextField(
+                    controller: txtSenhaConf,
                     decoration: InputDecoration(
                       labelText: 'Confirmar nova senha',
                       labelStyle: Font().NormalFont
@@ -74,7 +83,27 @@ class _TelaAlteracaoState extends State<TelaAlteracao> {
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {},
+                    onPressed: () 
+                    {
+                      if(!(txtSenha.text.isEmpty||txtSenhaNov.text.isEmpty||txtSenhaConf.text.isEmpty))
+                      {
+                        if(txtSenhaNov.text == txtSenhaConf.text)
+                        {
+                          message('Senha Alterada');
+                          clearTexts();
+
+                          Navigator.pop(context);
+                        }
+                        else
+                        {
+                          errorMessage('A senha nova não coincide');
+                        }
+                      }
+                      else
+                      {
+                        errorMessage('Um ou mais campos não preenchidos');
+                      }
+                    },
                     child: Text(
                       'Confirmar',
                       style: Font().ButtonFont
@@ -91,11 +120,14 @@ class _TelaAlteracaoState extends State<TelaAlteracao> {
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () { 
+                    onPressed: () 
+                    { 
+                      clearTexts();
+                      
                       Navigator.pop(context);
                     },
                     child: Text(
-                      'Cancelar',
+                      'Voltar',
                       style: Font().ButtonFont
                     ),
                   ),
@@ -105,6 +137,41 @@ class _TelaAlteracaoState extends State<TelaAlteracao> {
           ],
         ),
       ),
+    );
+  }
+
+  clearTexts()
+  {
+    txtSenha.text = '';
+    txtSenhaNov.text = '';
+    txtSenhaConf.text = '';
+  }
+
+  errorMessage(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Error,
+      )
+    );
+  }
+
+  message(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Tertiary,
+      )
     );
   }
 }

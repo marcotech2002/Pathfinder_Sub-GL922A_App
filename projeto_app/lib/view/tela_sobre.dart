@@ -82,7 +82,10 @@ class _TelaSobreState extends State<TelaSobre>
                   ),
                   backgroundColor: Palette().Secondary,
                 ),
-                onPressed: () {},
+                onPressed: () 
+                {
+                  Navigator.pop(context);
+                },
                 child: Text(
                   'Voltar',
                   style: Font().ButtonFont

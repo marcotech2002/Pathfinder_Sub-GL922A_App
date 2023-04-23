@@ -86,10 +86,170 @@ class _TelaMenuState extends State<TelaMenu>
           ],
         ),
       ),
-      body: Center(
-        child: Text(
-          'This is the home page',
-          style: Font().TitleFont,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Menu Principal",
+                textAlign: TextAlign.center,
+                style: Font().TitleFont
+              ),
+              Padding(padding: const EdgeInsets.fromLTRB(0,70,0,25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 60,
+                          horizontal: 50,
+                        ),
+                        backgroundColor: Palette().Secondary,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Opção 1',
+                        style: const TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 60,
+                          horizontal: 50,
+                        ),
+                        backgroundColor: Palette().Secondary,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Opção 2',
+                        style: const TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(padding: const EdgeInsets.fromLTRB(0,25,0,25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 60,
+                          horizontal: 50,
+                        ),
+                        backgroundColor: Palette().Secondary,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Opção 3',
+                        style: const TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 60,
+                          horizontal: 50,
+                        ),
+                        backgroundColor: Palette().Secondary,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Opção 4',
+                        style: const TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(padding: const EdgeInsets.fromLTRB(0,25,0,25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 60,
+                          horizontal: 50,
+                        ),
+                        backgroundColor: Palette().Secondary,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Opção 5',
+                        style: const TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 25,
+                    ),
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                          vertical: 60,
+                          horizontal: 50,
+                        ),
+                        backgroundColor: Palette().Secondary,
+                      ),
+                      onPressed: () {},
+                      child: Text(
+                        'Opção 6',
+                        style: const TextStyle(
+                          fontSize: 35,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 35,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 25,
+                    horizontal: 60, 
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                }, 
+                child: Text(
+                  'Sair',
+                  style: const TextStyle(
+                    fontSize: 35,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+            ],
+          ),
         ),
       ),
     );

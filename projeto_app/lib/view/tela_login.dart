@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:projeto_app/style/palette.dart';
 import 'package:projeto_app/style/font.dart';
 import 'package:projeto_app/view/tela_cadastro.dart';
+import 'package:projeto_app/view/tela_menu.dart';
 import 'package:projeto_app/view/tela_recuperacao.dart';
 
 class TelaLogin extends StatefulWidget {
@@ -62,7 +63,12 @@ class _TelaLoginState extends State<TelaLogin> {
                   ),
                   backgroundColor: Palette().Secondary,
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaMenu())
+                  );
+                },
                 child: Text(
                   'Confirmar',
                   style: Font().ButtonFont

@@ -58,7 +58,9 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     child: Text(
                       'Confirmar',
                       style: Font().ButtonFont

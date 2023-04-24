@@ -60,6 +60,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                   ),
                   TextField(
                     controller: txtSenha,
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Senha',
                       labelStyle: Font().NormalFont
@@ -70,6 +71,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                   ),
                   TextField(
                     controller: txtSenhaConf,
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Confirmar Senha',
                       labelStyle: Font().NormalFont

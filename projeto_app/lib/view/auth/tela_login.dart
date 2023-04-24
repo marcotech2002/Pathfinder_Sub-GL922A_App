@@ -54,6 +54,7 @@ class _TelaLoginState extends State<TelaLogin>
                     ),
                     TextField(
                       controller: txtSenha,
+                      obscureText: true,
                       decoration: InputDecoration(
                         labelText: 'Senha',
                         labelStyle: Font().NormalFont

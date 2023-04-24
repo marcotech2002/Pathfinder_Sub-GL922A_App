@@ -37,6 +37,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                 children: [
                   TextField(
                     controller: txtSenha,
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Senha antiga',
                       labelStyle: Font().NormalFont
@@ -47,6 +48,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                   ),
                   TextField(
                     controller: txtSenhaNov,
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Nova senha',
                       labelStyle: Font().NormalFont
@@ -57,6 +59,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                   ),
                   TextField(
                     controller: txtSenhaConf,
+                    obscureText: true,
                     decoration: InputDecoration(
                       labelText: 'Confirmar nova senha',
                       labelStyle: Font().NormalFont

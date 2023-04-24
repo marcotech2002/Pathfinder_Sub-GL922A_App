@@ -43,7 +43,7 @@ class _TelaConfigState extends State<TelaConfig>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Opção 1",
+                    "Ativar Notifição",
                     style: Font().NormalFont,
                   ),
                   Switch(
@@ -68,7 +68,7 @@ class _TelaConfigState extends State<TelaConfig>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Opção 2",
+                    "Tema escuro",
                     style: Font().NormalFont,
                   ),
                   Switch(
@@ -110,6 +110,46 @@ class _TelaConfigState extends State<TelaConfig>
                     },
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 50,
+                    vertical: 15
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () 
+                {
+
+                }, 
+                child: Text(
+                  'Adicionar foto de perfil',
+                  style: Font().ButtonFont
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 50,
+                    vertical: 15
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () 
+                {
+                  
+                }, 
+                child: Text(
+                  'Ajuda',
+                  style: Font().ButtonFont
+                ),
               ),
               SizedBox(
                 height: 50,

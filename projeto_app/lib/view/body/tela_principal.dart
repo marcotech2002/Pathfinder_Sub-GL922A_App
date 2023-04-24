@@ -103,11 +103,43 @@ class _TelaPrincipalState extends State<TelaPrincipal>
             Container (
               color: Palette().Primary,
               child: Column(
-                children: List.generate(4, (int index){
-                  return ListTile(
-                    leading: Icon(Icons.info),
-                  );
-                }),
+                children: [
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Página Inicial'),
+                    onTap: () {
+                      // navegar para a página inicial
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Página Inicial'),
+                    onTap: () {
+                      // navegar para a página inicial
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Página Inicial'),
+                    onTap: () {
+                      // navegar para a página inicial
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Página Inicial'),
+                    onTap: () {
+                      // navegar para a página inicial
+                    },
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.home),
+                    title: Text('Página Inicial'),
+                    onTap: () {
+                      // navegar para a página inicial
+                    },
+                  ),
+                ]
               ),
             )
           ],

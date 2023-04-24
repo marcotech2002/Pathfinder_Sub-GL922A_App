@@ -1,47 +1,46 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../style/font.dart';
-import '../style/palette.dart';
+import '../../style/font.dart';
+import '../../style/palette.dart';
 
-class TelaCadastro extends StatefulWidget 
+class TelaAlteracao extends StatefulWidget 
 {
-  const TelaCadastro({super.key});
+  const TelaAlteracao({super.key});
 
   @override
-  State<TelaCadastro> createState() => _TelaCadastroState();
+  State<TelaAlteracao> createState() => _TelaAlteracaoState();
 }
 
-class _TelaCadastroState extends State<TelaCadastro> 
+class _TelaAlteracaoState extends State<TelaAlteracao> 
 {
-  static var txtEmail = TextEditingController();
-  static var txtNome = TextEditingController();
   static var txtSenha = TextEditingController();
+  static var txtSenhaNov = TextEditingController();
   static var txtSenhaConf = TextEditingController();
 
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Palette().Primary,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Image.asset('assets/images/logo.png'),
             Text(
-              "Cadastro",
+              "Alteração de Senha",
               textAlign: TextAlign.center,
               style: Font().TitleFont
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(100,50,100,25),
+              padding: const EdgeInsets.fromLTRB(100,100,100,50),
               child: Column(
                 children: [
                   TextField(
-                    controller: txtEmail,
+                    controller: txtSenha,
                     decoration: InputDecoration(
-                      labelText: 'Email',
+                      labelText: 'Senha antiga',
                       labelStyle: Font().NormalFont
                     ),
                   ),
@@ -49,19 +48,9 @@ class _TelaCadastroState extends State<TelaCadastro>
                     height: 25,
                   ),
                   TextField(
-                    controller: txtNome,
+                    controller: txtSenhaNov,
                     decoration: InputDecoration(
-                      labelText: 'Nome',
-                      labelStyle: Font().NormalFont
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                  ),
-                  TextField(
-                    controller: txtSenha,
-                    decoration: InputDecoration(
-                      labelText: 'Senha',
+                      labelText: 'Nova senha',
                       labelStyle: Font().NormalFont
                     ),
                   ),
@@ -71,9 +60,12 @@ class _TelaCadastroState extends State<TelaCadastro>
                   TextField(
                     controller: txtSenhaConf,
                     decoration: InputDecoration(
-                      labelText: 'Confirmar Senha',
+                      labelText: 'Confirmar nova senha',
                       labelStyle: Font().NormalFont
                     ),
+                  ),
+                  SizedBox(
+                    height: 25,
                   ),
                 ]
               ),
@@ -87,29 +79,29 @@ class _TelaCadastroState extends State<TelaCadastro>
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:35,
+                        horizontal:50,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () 
                     {
-                      if(!(txtEmail.text.isEmpty||txtEmail.text.isEmpty||txtSenha.text.isEmpty||txtSenhaConf.text.isEmpty))
+                      if(!(txtSenha.text.isEmpty||txtSenhaNov.text.isEmpty||txtSenhaConf.text.isEmpty))
                       {
-                        if(txtSenha.text == txtSenhaConf.text)
+                        if(txtSenhaNov.text == txtSenhaConf.text)
                         {
-                          message('Cadastro realizado com sucesso');
+                          message('Senha Alterada');
                           clearTexts();
-                          
+
                           Navigator.pop(context);
                         }
                         else
                         {
-                          errorMessage('As senhas não coincidem');
+                          errorMessage('A senha nova não coincide');
                         }
                       }
                       else
                       {
-                        errorMessage('Campos não preenchidos');
+                        errorMessage('Um ou mais campos não preenchidos');
                       }
                     },
                     child: Text(
@@ -118,13 +110,13 @@ class _TelaCadastroState extends State<TelaCadastro>
                     ),
                   ),
                   SizedBox(
-                    width: 25,
+                    width: 50,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:35,
+                        horizontal:50,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
@@ -135,7 +127,7 @@ class _TelaCadastroState extends State<TelaCadastro>
                       Navigator.pop(context);
                     },
                     child: Text(
-                      'Cancelar',
+                      'Voltar',
                       style: Font().ButtonFont
                     ),
                   ),
@@ -150,13 +142,11 @@ class _TelaCadastroState extends State<TelaCadastro>
 
   clearTexts()
   {
-    txtEmail.text = '';
-    txtNome.text = '';
     txtSenha.text = '';
+    txtSenhaNov.text = '';
     txtSenhaConf.text = '';
   }
 
-  //mensagem
   errorMessage(message) 
   {
     ScaffoldMessenger.of(context).showSnackBar(

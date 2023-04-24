@@ -1,11 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+
 import 'package:projeto_app/style/palette.dart';
 import 'package:projeto_app/style/font.dart';
-import 'package:projeto_app/view/tela_cadastro.dart';
-import 'package:projeto_app/view/tela_menu.dart';
-import 'package:projeto_app/view/tela_recuperacao.dart';
+
+import 'package:projeto_app/view/auth/tela_cadastro.dart';
+import 'package:projeto_app/view/auth/tela_recuperacao.dart';
+
+import 'package:projeto_app/view/body/tela_menu.dart';
 
 class TelaLogin extends StatefulWidget 
 {

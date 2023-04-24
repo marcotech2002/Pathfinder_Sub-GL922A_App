@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-import '../style/font.dart';
-import '../style/palette.dart';
+import '../../style/font.dart';
+import '../../style/palette.dart';
 
 class TelaRecuperacao extends StatefulWidget 
 {

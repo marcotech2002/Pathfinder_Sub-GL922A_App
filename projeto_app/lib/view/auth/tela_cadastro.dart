@@ -1,46 +1,47 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../style/font.dart';
-import '../style/palette.dart';
+import '../../style/font.dart';
+import '../../style/palette.dart';
 
-class TelaAlteracao extends StatefulWidget 
+class TelaCadastro extends StatefulWidget 
 {
-  const TelaAlteracao({super.key});
+  const TelaCadastro({super.key});
 
   @override
-  State<TelaAlteracao> createState() => _TelaAlteracaoState();
+  State<TelaCadastro> createState() => _TelaCadastroState();
 }
 
-class _TelaAlteracaoState extends State<TelaAlteracao> 
+class _TelaCadastroState extends State<TelaCadastro> 
 {
+  static var txtEmail = TextEditingController();
+  static var txtNome = TextEditingController();
   static var txtSenha = TextEditingController();
-  static var txtSenhaNov = TextEditingController();
   static var txtSenhaConf = TextEditingController();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return Scaffold(
       backgroundColor: Palette().Primary,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            Image.asset('assets/images/logo.png'),
             Text(
-              "Alteração de Senha",
+              "Cadastro",
               textAlign: TextAlign.center,
               style: Font().TitleFont
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(100,100,100,50),
+              padding: const EdgeInsets.fromLTRB(100,50,100,25),
               child: Column(
                 children: [
                   TextField(
-                    controller: txtSenha,
+                    controller: txtEmail,
                     decoration: InputDecoration(
-                      labelText: 'Senha antiga',
+                      labelText: 'Email',
                       labelStyle: Font().NormalFont
                     ),
                   ),
@@ -48,9 +49,19 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                     height: 25,
                   ),
                   TextField(
-                    controller: txtSenhaNov,
+                    controller: txtNome,
                     decoration: InputDecoration(
-                      labelText: 'Nova senha',
+                      labelText: 'Nome',
+                      labelStyle: Font().NormalFont
+                    ),
+                  ),
+                  SizedBox(
+                    height: 50,
+                  ),
+                  TextField(
+                    controller: txtSenha,
+                    decoration: InputDecoration(
+                      labelText: 'Senha',
                       labelStyle: Font().NormalFont
                     ),
                   ),
@@ -60,12 +71,9 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                   TextField(
                     controller: txtSenhaConf,
                     decoration: InputDecoration(
-                      labelText: 'Confirmar nova senha',
+                      labelText: 'Confirmar Senha',
                       labelStyle: Font().NormalFont
                     ),
-                  ),
-                  SizedBox(
-                    height: 25,
                   ),
                 ]
               ),
@@ -79,29 +87,29 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:50,
+                        horizontal:35,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
                     onPressed: () 
                     {
-                      if(!(txtSenha.text.isEmpty||txtSenhaNov.text.isEmpty||txtSenhaConf.text.isEmpty))
+                      if(!(txtEmail.text.isEmpty||txtEmail.text.isEmpty||txtSenha.text.isEmpty||txtSenhaConf.text.isEmpty))
                       {
-                        if(txtSenhaNov.text == txtSenhaConf.text)
+                        if(txtSenha.text == txtSenhaConf.text)
                         {
-                          message('Senha Alterada');
+                          message('Cadastro realizado com sucesso');
                           clearTexts();
-
+                          
                           Navigator.pop(context);
                         }
                         else
                         {
-                          errorMessage('A senha nova não coincide');
+                          errorMessage('As senhas não coincidem');
                         }
                       }
                       else
                       {
-                        errorMessage('Um ou mais campos não preenchidos');
+                        errorMessage('Campos não preenchidos');
                       }
                     },
                     child: Text(
@@ -110,13 +118,13 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                     ),
                   ),
                   SizedBox(
-                    width: 50,
+                    width: 25,
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       padding: EdgeInsets.symmetric(
                         vertical:25,
-                        horizontal:50,
+                        horizontal:35,
                       ),
                       backgroundColor: Palette().Secondary,
                     ),
@@ -127,7 +135,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                       Navigator.pop(context);
                     },
                     child: Text(
-                      'Voltar',
+                      'Cancelar',
                       style: Font().ButtonFont
                     ),
                   ),
@@ -142,11 +150,13 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
 
   clearTexts()
   {
+    txtEmail.text = '';
+    txtNome.text = '';
     txtSenha.text = '';
-    txtSenhaNov.text = '';
     txtSenhaConf.text = '';
   }
 
+  //mensagem
   errorMessage(message) 
   {
     ScaffoldMessenger.of(context).showSnackBar(

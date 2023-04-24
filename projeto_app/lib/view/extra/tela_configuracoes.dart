@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../style/font.dart';
-import '../style/palette.dart';
+import '../../style/font.dart';
+import '../../style/palette.dart';
 
 
 
@@ -31,6 +29,7 @@ class _TelaConfigState extends State<TelaConfig>
                 textAlign: TextAlign.center,
                 style: Font().TitleFont
               ),
+              ElevatedButton(onPressed: onPressed, child: child)
             ],
           ),
         ),

@@ -3,10 +3,10 @@
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:projeto_app/view/tela_login.dart';
+import 'package:projeto_app/view/auth/tela_login.dart';
 
-import '../style/font.dart';
-import '../style/palette.dart';
+import '../../style/font.dart';
+import '../../style/palette.dart';
 
 class TelaSplash extends StatelessWidget {
   const TelaSplash({super.key});

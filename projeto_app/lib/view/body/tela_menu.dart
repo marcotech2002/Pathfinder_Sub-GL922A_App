@@ -2,14 +2,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:projeto_app/view/tela_alteracao.dart';
-import 'package:projeto_app/view/tela_conectar.dart';
-import 'package:projeto_app/view/tela_configuracoes.dart';
-import 'package:projeto_app/view/tela_listar.dart';
-import 'package:projeto_app/view/tela_sobre.dart';
+import 'package:projeto_app/view/extra/tela_alteracao.dart';
+import 'package:projeto_app/view/app/tela_conectar.dart';
+import 'package:projeto_app/view/extra/tela_configuracoes.dart';
+import 'package:projeto_app/view/app/tela_listar.dart';
+import 'package:projeto_app/view/extra/tela_sobre.dart';
 
-import '../style/font.dart';
-import '../style/palette.dart';
+import '../../style/font.dart';
+import '../../style/palette.dart';
 
 class TelaMenu extends StatefulWidget 
 {

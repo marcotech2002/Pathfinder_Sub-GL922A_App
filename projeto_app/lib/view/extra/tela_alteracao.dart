@@ -1,8 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 import '../../style/font.dart';
 import '../../style/palette.dart';
@@ -24,7 +22,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Palette().Primary,
+      backgroundColor: Palette().Quaternary,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -81,7 +79,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                         vertical:25,
                         horizontal:50,
                       ),
-                      backgroundColor: Palette().Secondary,
+                      backgroundColor: Palette().Primary,
                     ),
                     onPressed: () 
                     {
@@ -106,7 +104,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                     },
                     child: Text(
                       'Confirmar',
-                      style: Font().ButtonFont
+                      style: Font().MenuButtonFont
                     ),
                   ),
                   SizedBox(
@@ -118,7 +116,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                         vertical:25,
                         horizontal:50,
                       ),
-                      backgroundColor: Palette().Secondary,
+                      backgroundColor: Palette().Primary,
                     ),
                     onPressed: () 
                     { 
@@ -128,7 +126,7 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
                     },
                     child: Text(
                       'Voltar',
-                      style: Font().ButtonFont
+                      style: Font().MenuButtonFont
                     ),
                   ),
                 ],

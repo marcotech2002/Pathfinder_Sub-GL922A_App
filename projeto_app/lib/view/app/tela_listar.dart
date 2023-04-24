@@ -19,7 +19,7 @@ class _TelaListaState extends State<TelaLista>
   Widget build(BuildContext context) 
   {
     return Scaffold(
-      backgroundColor: Palette().Primary,
+      backgroundColor: Palette().Quaternary,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -42,7 +42,7 @@ class _TelaListaState extends State<TelaLista>
                     horizontal: 50,
                     vertical: 25
                   ),
-                  backgroundColor: Palette().Secondary,
+                  backgroundColor: Palette().Primary,
                 ),
                 onPressed: () 
                 {
@@ -50,7 +50,7 @@ class _TelaListaState extends State<TelaLista>
                 }, 
                 child: Text(
                   'Voltar',
-                  style: Font().ButtonFont
+                  style: Font().MenuButtonFont
                 ),
               ),
               SizedBox(

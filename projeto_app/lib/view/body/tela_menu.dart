@@ -25,6 +25,7 @@ class _TelaMenuState extends State<TelaMenu>
   Widget build(BuildContext context) 
   {
     return Scaffold(
+      backgroundColor: Palette().Quaternary,
       appBar: AppBar(
         backgroundColor: Palette().Primary,
         title: Text(
@@ -113,7 +114,7 @@ class _TelaMenuState extends State<TelaMenu>
                           vertical: 60,
                           horizontal: 80,
                         ),
-                        backgroundColor: Palette().Secondary,
+                        backgroundColor: Palette().Primary,
                       ),
                       onPressed: () 
                       {
@@ -124,7 +125,7 @@ class _TelaMenuState extends State<TelaMenu>
                       },
                       child: Text(
                         'Conectar',
-                        style: Font().ButtonFont,
+                        style: Font().MenuButtonFont,
                       ),
                     ),
                     SizedBox(
@@ -136,7 +137,7 @@ class _TelaMenuState extends State<TelaMenu>
                           vertical: 60,
                           horizontal: 60,
                         ),
-                        backgroundColor: Palette().Secondary,
+                        backgroundColor: Palette().Primary,
                       ),
                       onPressed: () 
                       {
@@ -147,7 +148,7 @@ class _TelaMenuState extends State<TelaMenu>
                       },
                       child: Text(
                         'Dispositivos',
-                        style: Font().ButtonFont,
+                        style: Font().MenuButtonFont,
                       ),
                     ),
                   ],
@@ -163,7 +164,7 @@ class _TelaMenuState extends State<TelaMenu>
                           vertical: 60,
                           horizontal: 98,
                         ),
-                        backgroundColor: Palette().Secondary,
+                        backgroundColor: Palette().Primary,
                       ),
                       onPressed: () 
                       {
@@ -174,7 +175,7 @@ class _TelaMenuState extends State<TelaMenu>
                       },
                       child: Text(
                         'Sobre',
-                        style: Font().ButtonFont,
+                        style: Font().MenuButtonFont,
                       ),
                     ),
                     SizedBox(
@@ -186,7 +187,7 @@ class _TelaMenuState extends State<TelaMenu>
                           vertical: 60,
                           horizontal: 54,
                         ),
-                        backgroundColor: Palette().Secondary,
+                        backgroundColor: Palette().Primary,
                       ),
                       onPressed: () 
                       {
@@ -197,7 +198,7 @@ class _TelaMenuState extends State<TelaMenu>
                       },
                       child: Text(
                         'Alterar Senha',
-                        style: Font().ButtonFont,
+                        style: Font().MenuButtonFont,
                       ),
                     ),
                   ],
@@ -213,7 +214,7 @@ class _TelaMenuState extends State<TelaMenu>
                           vertical: 60,
                           horizontal: 55,
                         ),
-                        backgroundColor: Palette().Secondary,
+                        backgroundColor: Palette().Primary,
                       ),
                       onPressed: () 
                       {
@@ -224,7 +225,7 @@ class _TelaMenuState extends State<TelaMenu>
                       },
                       child: Text(
                         'Configurações',
-                        style: Font().ButtonFont,
+                        style: Font().MenuButtonFont,
                       ),
                     ),
                     SizedBox(
@@ -236,7 +237,7 @@ class _TelaMenuState extends State<TelaMenu>
                           vertical: 60,
                           horizontal: 108,
                         ),
-                        backgroundColor: Palette().Secondary,
+                        backgroundColor: Palette().Primary,
                       ),
                       onPressed: () 
                       {
@@ -244,7 +245,7 @@ class _TelaMenuState extends State<TelaMenu>
                       },
                       child: Text(
                         'Sair',
-                        style: Font().ButtonFont,
+                        style: Font().MenuButtonFont,
                       ),
                     ),
                   ],

@@ -19,12 +19,14 @@ class _TelaSobreState extends State<TelaSobre>
   Widget build(BuildContext context) 
   {
     return Scaffold(
-      backgroundColor: Palette().Primary,
+      backgroundColor: Palette().Quaternary,
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             children: <Widget>[
-              Image.asset('assets/images/logo.png'),
+              SizedBox(
+                height: 50,
+              ),
               Text(
                 "Sobre",
                 textAlign: TextAlign.center,
@@ -80,7 +82,7 @@ class _TelaSobreState extends State<TelaSobre>
                     horizontal: 50,
                     vertical: 25
                   ),
-                  backgroundColor: Palette().Secondary,
+                  backgroundColor: Palette().Primary,
                 ),
                 onPressed: () 
                 {
@@ -88,7 +90,7 @@ class _TelaSobreState extends State<TelaSobre>
                 },
                 child: Text(
                   'Voltar',
-                  style: Font().ButtonFont
+                  style: Font().MenuButtonFont
                 ),
               ),
               SizedBox(

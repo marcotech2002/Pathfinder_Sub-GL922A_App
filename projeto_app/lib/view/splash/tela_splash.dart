@@ -3,7 +3,7 @@
 import 'package:easy_splash_screen/easy_splash_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'package:projeto_app/view/auth/tela_login.dart';
+import '../../view/auth/tela_login.dart';
 
 import '../../style/font.dart';
 import '../../style/palette.dart';

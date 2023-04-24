@@ -1,16 +1,65 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+// ignore_for_file: prefer_const_constructors
 
-class TelaLista extends StatefulWidget {
+import 'package:flutter/material.dart';
+
+import '../../style/font.dart';
+import '../../style/palette.dart';
+
+class TelaLista extends StatefulWidget 
+{
   const TelaLista({super.key});
 
   @override
   State<TelaLista> createState() => _TelaListaState();
 }
 
-class _TelaListaState extends State<TelaLista> {
+class _TelaListaState extends State<TelaLista> 
+{
   @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
+  Widget build(BuildContext context) 
+  {
+    return Scaffold(
+      backgroundColor: Palette().Primary,
+      body: SingleChildScrollView(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Dispositivos",
+                textAlign: TextAlign.center,
+                style: Font().TitleFont
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 50,
+                    vertical: 25
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () 
+                {
+                  Navigator.pop(context);
+                }, 
+                child: Text(
+                  'Voltar',
+                  style: Font().ButtonFont
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

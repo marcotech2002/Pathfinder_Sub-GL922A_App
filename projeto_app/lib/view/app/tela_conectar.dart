@@ -33,26 +33,27 @@ class _TelaConectarState extends State<TelaConectar>
                 textAlign: TextAlign.center,
                 style: Font().TitleFont
               ),
-              SizedBox(
-                height: 50,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 25
-                  ),
-                  backgroundColor: Palette().Primary,
-                ),
-                onPressed: () 
-                {
-                  Navigator.pop(context);
-                }, 
-                child: Text(
-                  'Voltar',
-                  style: Font().MenuButtonFont
-                ),
-              ),
+              
+              // SizedBox(
+              //   height: 50,
+              // ),
+              // ElevatedButton(
+              //   style: ElevatedButton.styleFrom(
+              //     padding: EdgeInsets.symmetric(
+              //       horizontal: 50,
+              //       vertical: 25
+              //     ),
+              //     backgroundColor: Palette().Primary,
+              //   ),
+              //   onPressed: () 
+              //   {
+              //     Navigator.pop(context);
+              //   }, 
+              //   child: Text(
+              //     'Voltar',
+              //     style: Font().MenuButtonFont
+              //   ),
+              // ),
               SizedBox(
                 height: 50,
               ),

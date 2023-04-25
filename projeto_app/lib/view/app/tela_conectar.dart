@@ -76,7 +76,7 @@ class _TelaConectarState extends State<TelaConectar>
                 ),
                 onPressed: () 
                 {
-                  
+                  message('Conectando...');
                 }, 
                 child: Text(
                   'Conectar',
@@ -87,6 +87,20 @@ class _TelaConectarState extends State<TelaConectar>
           ),
         ),
       ),
+    );
+  }
+
+  message(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Tertiary,
+      )
     );
   }
 }

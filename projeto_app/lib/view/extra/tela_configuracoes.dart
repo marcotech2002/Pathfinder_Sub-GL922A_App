@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:projeto_app/view/extra/tela_alteracao.dart';
+
 import '../../style/font.dart';
 import '../../style/palette.dart';
 
@@ -18,6 +20,7 @@ class _TelaConfigState extends State<TelaConfig>
   bool btn1 = false;
   bool btn2 = false;
   bool btn3 = false;
+  bool btn4 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +65,7 @@ class _TelaConfigState extends State<TelaConfig>
                 ],
               ),
               SizedBox(
-                height: 25,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -87,13 +90,13 @@ class _TelaConfigState extends State<TelaConfig>
                 ],
               ),
               SizedBox(
-                height: 25,
+                height: 15,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Opção 3",
+                    "Lembrar usuário no login",
                     style: Font().NormalFont,
                   ),
                   Switch(
@@ -112,7 +115,32 @@ class _TelaConfigState extends State<TelaConfig>
                 ],
               ),
               SizedBox(
-                height: 50,
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Autenticação de dois fatores",
+                    style: Font().NormalFont,
+                  ),
+                  Switch(
+                    value: btn4,
+                    inactiveThumbColor: Palette().Primary,
+                    activeColor: Palette().Tertiary, 
+                    onChanged: (bool value)
+                    {
+                      setState(() 
+                        {
+                          btn4 = value;
+                        }
+                      );
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 70,
               ),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
@@ -137,7 +165,50 @@ class _TelaConfigState extends State<TelaConfig>
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 50,
+                    horizontal: 122,
+                    vertical: 15
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () 
+                {
+
+                }, 
+                child: Text(
+                  'Mudar Email',
+                  style: Font().ButtonFont
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 110,
+                    vertical: 15
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () 
+                {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => TelaAlteracao())
+                  );
+                }, 
+                child: Text(
+                  'Alterar Senha',
+                  style: Font().ButtonFont
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 159,
                     vertical: 15
                   ),
                   backgroundColor: Palette().Secondary,
@@ -149,26 +220,6 @@ class _TelaConfigState extends State<TelaConfig>
                 child: Text(
                   'Ajuda',
                   style: Font().ButtonFont
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 25
-                  ),
-                  backgroundColor: Palette().Primary,
-                ),
-                onPressed: () 
-                {
-                  Navigator.pop(context);
-                }, 
-                child: Text(
-                  'Voltar',
-                  style: Font().MenuButtonFont
                 ),
               ),
               SizedBox(

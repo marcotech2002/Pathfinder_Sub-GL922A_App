@@ -29,9 +29,25 @@ class _TelaStatusState extends State<TelaStatus>
                 height: 50,
               ),
               Text(
-                "Disp",
+                "Status",
                 textAlign: TextAlign.center,
                 style: Font().TitleFont
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Text(
+                "Dispositivo:",
+                textAlign: TextAlign.center,
+                style: Font().NormalFont
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Text(
+                "Status:" + "",
+                textAlign: TextAlign.center,
+                style: Font().NormalFont
               ),
               SizedBox(
                 height: 50,
@@ -46,10 +62,10 @@ class _TelaStatusState extends State<TelaStatus>
                 ),
                 onPressed: () 
                 {
-                  Navigator.pop(context);
+                  
                 }, 
                 child: Text(
-                  'Voltar',
+                  'Atualizar',
                   style: Font().MenuButtonFont
                 ),
               ),

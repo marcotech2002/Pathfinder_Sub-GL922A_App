@@ -31,9 +31,8 @@ class _TelaPrincipalState extends State<TelaPrincipal>
       body: PageView(
         controller: pageController,
         children: [
-          TelaMenu(),
-          TelaConectar(),
           TelaLista(),
+          TelaConectar(),
           TelaSobre(),
           TelaConfig(),
           TelaAlteracao(),
@@ -66,36 +65,46 @@ class _TelaPrincipalState extends State<TelaPrincipal>
                   ListTile(
                     leading: Icon(Icons.home),
                     title: Text('Página Inicial'),
-                    onTap: () {
+                    onTap: () 
+                    {
                       pageController.animateToPage(0, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                      Navigator.pop(context);
                     },
                   ),
                   ListTile(
                     leading: Icon(Icons.bluetooth),
                     title: Text('Conectar'),
-                    onTap: () {
-                        pageController.animateToPage(1, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                    onTap: () 
+                    {
+                      pageController.animateToPage(1, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                      Navigator.pop(context);
                     }
                   ),
-                  ListTile(
-                    leading: Icon(Icons.format_list_bulleted),
-                    title: Text('Dispositivos'),
-                    onTap: () {
-                      pageController.animateToPage(2, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
-                    },
-                  ),
+                  // ListTile(
+                  //   leading: Icon(Icons.format_list_bulleted),
+                  //   title: Text('Dispositivos'),
+                  //   onTap: () 
+                  //   {
+                  //     pageController.animateToPage(2, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                  //     Navigator.pop(context);
+                  //   },
+                  // ),
                   ListTile(
                     leading: Icon(Icons.insert_comment_outlined),
                     title: Text('Sobre'),
-                    onTap: () {
-                      pageController.animateToPage(3, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                    onTap: () 
+                    {
+                      pageController.animateToPage(2, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                      Navigator.pop(context);
                     },
                   ),
                   ListTile(
                     leading: Icon(Icons.settings),
                     title: Text('Configurações'),
-                    onTap: () {
-                      pageController.animateToPage(4, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                    onTap: () 
+                    {
+                      pageController.animateToPage(3, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                      Navigator.pop(context);
                     },
                   ),
                   SizedBox(height: 250),

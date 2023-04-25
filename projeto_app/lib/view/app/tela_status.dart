@@ -69,7 +69,7 @@ class _TelaStatusState extends State<TelaStatus>
                     ),
                     onPressed: () 
                     {
-                      
+                      message('Atualizando...');
                     }, 
                     child: Text(
                       'Atualizar',
@@ -102,6 +102,20 @@ class _TelaStatusState extends State<TelaStatus>
           ),
         ),
       ),
+    );
+  }
+
+  message(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Tertiary,
+      )
     );
   }
 }

@@ -42,7 +42,7 @@ class _TelaSobreState extends State<TelaSobre>
               SizedBox(
                 height: 15,
               ),
-              Image.asset('assets/images/logo.png'),
+              Image.asset('assets/images/logo.png', width: 500, height: 500),
               Text(
                 "Marco Antônio Porsch de Almeida",
                 textAlign: TextAlign.center,
@@ -51,7 +51,7 @@ class _TelaSobreState extends State<TelaSobre>
               SizedBox(
                 height: 25,
               ),
-              Image.asset('assets/images/logo.png'),
+              Image.asset('assets/images/parquinhos.jpg', width: 500, height: 500),
               Text(
                 "Marcos Vinicius Alves da Rocha",
                 textAlign: TextAlign.center,

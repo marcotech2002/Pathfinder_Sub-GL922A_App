@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, unused_local_variable, prefer_interpolation_to_compose_strings
 
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,11 @@ import '../../style/palette.dart';
 
 class TelaStatus extends StatefulWidget 
 {
-  const TelaStatus({super.key});
+  //const TelaStatus({super.key});
+  final String nome;
+  final String status;
+
+  TelaStatus({required this.nome, required this.status});
 
   @override
   State<TelaStatus> createState() => _TelaStatusState();
@@ -37,7 +41,7 @@ class _TelaStatusState extends State<TelaStatus>
                 height: 50,
               ),
               Text(
-                "Dispositivo:",
+                "Dispositivo: " + widget.nome,
                 textAlign: TextAlign.center,
                 style: Font().NormalFont
               ),
@@ -45,32 +49,54 @@ class _TelaStatusState extends State<TelaStatus>
                 height: 25,
               ),
               Text(
-                "Status:" + "",
+                "Status: " + widget.status,
                 textAlign: TextAlign.center,
                 style: Font().NormalFont
               ),
               SizedBox(
                 height: 50,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 25
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 50,
+                        vertical: 25
+                      ),
+                      backgroundColor: Palette().Primary,
+                    ),
+                    onPressed: () 
+                    {
+                      
+                    }, 
+                    child: Text(
+                      'Atualizar',
+                      style: Font().MenuButtonFont
+                    ),
                   ),
-                  backgroundColor: Palette().Primary,
-                ),
-                onPressed: () 
-                {
-                  
-                }, 
-                child: Text(
-                  'Atualizar',
-                  style: Font().MenuButtonFont
-                ),
-              ),
-              SizedBox(
-                height: 50,
+                  SizedBox(
+                    width: 25,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 50,
+                        vertical: 25
+                      ),
+                      backgroundColor: Palette().Primary,
+                    ),
+                    onPressed: () 
+                    {
+                      Navigator.pop(context);
+                    }, 
+                    child: Text(
+                      'Voltar',
+                      style: Font().MenuButtonFont
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

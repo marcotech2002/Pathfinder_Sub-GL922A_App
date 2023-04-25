@@ -18,6 +18,7 @@ class _TelaConfigState extends State<TelaConfig>
   bool btn1 = false;
   bool btn2 = false;
   bool btn3 = false;
+  bool btn4 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +94,7 @@ class _TelaConfigState extends State<TelaConfig>
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Opção 3",
+                    "Lembrar usuário no login",
                     style: Font().NormalFont,
                   ),
                   Switch(
@@ -105,6 +106,31 @@ class _TelaConfigState extends State<TelaConfig>
                       setState(() 
                         {
                           btn3 = value;
+                        }
+                      );
+                    },
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Autenticação de dois fatores",
+                    style: Font().NormalFont,
+                  ),
+                  Switch(
+                    value: btn4,
+                    inactiveThumbColor: Palette().Primary,
+                    activeColor: Palette().Tertiary, 
+                    onChanged: (bool value)
+                    {
+                      setState(() 
+                        {
+                          btn4 = value;
                         }
                       );
                     },
@@ -137,7 +163,27 @@ class _TelaConfigState extends State<TelaConfig>
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   padding: EdgeInsets.symmetric(
-                    horizontal: 50,
+                    horizontal: 123,
+                    vertical: 15
+                  ),
+                  backgroundColor: Palette().Secondary,
+                ),
+                onPressed: () 
+                {
+
+                }, 
+                child: Text(
+                  'Mudar Email',
+                  style: Font().ButtonFont
+                ),
+              ),
+              SizedBox(
+                height: 25,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 159,
                     vertical: 15
                   ),
                   backgroundColor: Palette().Secondary,

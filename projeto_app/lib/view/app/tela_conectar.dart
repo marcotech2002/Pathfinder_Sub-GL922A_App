@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+
 import '../../style/font.dart';
 import '../../style/palette.dart';
 
@@ -15,6 +17,8 @@ class TelaConectar extends StatefulWidget
 
 class _TelaConectarState extends State<TelaConectar> 
 {
+  FlutterBluePlus flutterBlue = FlutterBluePlus.instance;
+  
   @override
   Widget build(BuildContext context) 
   {

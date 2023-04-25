@@ -172,7 +172,7 @@ class _TelaConfigState extends State<TelaConfig>
                 ),
                 onPressed: () 
                 {
-
+                  message('Verifique seu Email');
                 }, 
                 child: Text(
                   'Mudar Email',
@@ -229,6 +229,20 @@ class _TelaConfigState extends State<TelaConfig>
           ),
         ),
       ),
+    );
+  }
+
+  message(message) 
+  {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          message,
+          style: Font().MessageFont,
+        ),
+        duration: Duration(seconds: 3),
+        backgroundColor: Palette().Tertiary,
+      )
     );
   }
 }

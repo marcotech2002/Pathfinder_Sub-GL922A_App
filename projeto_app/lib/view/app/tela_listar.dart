@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:projeto_app/model/dispositivo.dart';
 
 import '../../style/font.dart';
 import '../../style/palette.dart';
@@ -15,30 +16,37 @@ class TelaLista extends StatefulWidget
 
 class _TelaListaState extends State<TelaLista> 
 {
+  List<Dispositivo> dispositivos = [
+    Dispositivo(id: 1, nome: "Refrigerador"),
+    Dispositivo(id: 2, nome: "JBL"),
+    Dispositivo(id: 3, nome: "Televisão"),
+    Dispositivo(id: 4, nome: "Luzes"),
+  ];
+
   @override
   Widget build(BuildContext context) 
   {
     return Scaffold(
-      backgroundColor: Palette().Quaternary,
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(
-                height: 50,
-              ),
-              Text(
-                "Dispositivos",
-                textAlign: TextAlign.center,
-                style: Font().TitleFont
-              ),
-              SizedBox(
-                height: 50,
-              ),
-            ],
+      body: Column(
+        children: <Widget>[
+          Text(
+            "Dispositivos",
+            textAlign: TextAlign.center,
+            style: Font().TitleFont
           ),
-        ),
+          Expanded(
+            child: ListView.separated(
+            itemCount: dispositivos.length,
+            separatorBuilder: (context, index) => Divider(),
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(dispositivos[index].id.toString()),
+                subtitle: Text(dispositivos[index].nome),
+              );
+            }
+          )
+          ),
+        ],
       ),
     );
   }

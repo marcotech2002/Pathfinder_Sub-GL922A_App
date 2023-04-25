@@ -26,6 +26,9 @@ class _TelaAlteracaoState extends State<TelaAlteracao>
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            SizedBox(
+              height: 50,
+            ),
             Text(
               "Alteração de Senha",
               textAlign: TextAlign.center,

@@ -76,23 +76,6 @@ class _TelaSobreState extends State<TelaSobre>
               SizedBox(
                 height: 70,
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 50,
-                    vertical: 25
-                  ),
-                  backgroundColor: Palette().Primary,
-                ),
-                onPressed: () 
-                {
-                  Navigator.pop(context);
-                },
-                child: Text(
-                  'Voltar',
-                  style: Font().MenuButtonFont
-                ),
-              ),
               SizedBox(
                 height: 50,
               ),

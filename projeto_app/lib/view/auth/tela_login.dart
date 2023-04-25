@@ -9,6 +9,7 @@ import 'package:projeto_app/view/auth/tela_cadastro.dart';
 import 'package:projeto_app/view/auth/tela_recuperacao.dart';
 
 import 'package:projeto_app/view/body/tela_menu.dart';
+import 'package:projeto_app/view/body/tela_principal.dart';
 
 class TelaLogin extends StatefulWidget 
 {
@@ -86,7 +87,7 @@ class _TelaLoginState extends State<TelaLogin>
                       
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => TelaMenu())
+                      MaterialPageRoute(builder: (context) => TelaPrincipal())
                     );
                   }
                 },

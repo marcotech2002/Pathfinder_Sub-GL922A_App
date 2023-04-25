@@ -22,7 +22,6 @@ class TelaPrincipal extends StatefulWidget
 
 class _TelaPrincipalState extends State<TelaPrincipal> 
 {
-  var currentPage = 1;
   var pageController = PageController(initialPage: 0);
 
   @override
@@ -36,16 +35,9 @@ class _TelaPrincipalState extends State<TelaPrincipal>
           TelaConectar(),
           TelaLista(),
           TelaSobre(),
-          TelaAlteracao(),
           TelaConfig(),
+          TelaAlteracao(),
         ],
-        onPageChanged: (index) {
-          setState(() 
-            {
-              currentPage = index;
-            }
-          );
-        },
       ),
       appBar: AppBar(
         backgroundColor: Palette().Primary,
@@ -53,40 +45,6 @@ class _TelaPrincipalState extends State<TelaPrincipal>
           "Pathfinder",
           style: Font().MenuFont
         ),
-        // actions: <Widget>[
-        //   IconButton(
-        //     style: ButtonStyle(
-        //       iconColor: Palette().Tertiary
-        //     ),
-        //     icon: const Icon(Icons.add_alert),
-        //     tooltip: 'Show Snackbar',
-        //     onPressed: () {
-        //       ScaffoldMessenger.of(context).showSnackBar(
-        //           const SnackBar(content: Text('This is a snackbar')));
-        //     },
-        //   ),
-        //   IconButton(
-        //     icon: const Icon(Icons.navigate_next),
-        //     tooltip: 'Go to the next page',
-        //     onPressed: () {
-        //       Navigator.push(context, MaterialPageRoute<void>(
-        //         builder: (BuildContext context) {
-        //           return Scaffold(
-        //             appBar: AppBar(
-        //               title: const Text('Next page'),
-        //             ),
-        //             body: const Center(
-        //               child: Text(
-        //                 'This is the next page',
-        //                 style: TextStyle(fontSize: 24),
-        //               ),
-        //             ),
-        //           );
-        //         },
-        //       ));
-        //     },
-        //   ),
-        // ],
       ),
       drawer: Drawer(
         backgroundColor: Palette().Primary,
@@ -97,6 +55,7 @@ class _TelaPrincipalState extends State<TelaPrincipal>
               child: DrawerHeader(
                 child: CircleAvatar(
                   backgroundColor: Palette().Secondary,
+                  child: Text("MA", style: Font().TitleFont),
                 )
               ),
             ),
@@ -108,35 +67,44 @@ class _TelaPrincipalState extends State<TelaPrincipal>
                     leading: Icon(Icons.home),
                     title: Text('Página Inicial'),
                     onTap: () {
-                      // navegar para a página inicial
+                      pageController.animateToPage(0, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Página Inicial'),
+                    leading: Icon(Icons.bluetooth),
+                    title: Text('Conectar'),
                     onTap: () {
-                      // navegar para a página inicial
+                        pageController.animateToPage(1, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
+                    }
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.format_list_bulleted),
+                    title: Text('Dispositivos'),
+                    onTap: () {
+                      pageController.animateToPage(2, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Página Inicial'),
+                    leading: Icon(Icons.insert_comment_outlined),
+                    title: Text('Sobre'),
                     onTap: () {
-                      // navegar para a página inicial
+                      pageController.animateToPage(3, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
                     },
                   ),
                   ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Página Inicial'),
+                    leading: Icon(Icons.settings),
+                    title: Text('Configurações'),
                     onTap: () {
-                      // navegar para a página inicial
+                      pageController.animateToPage(4, duration: Duration(milliseconds: 200), curve: Curves.easeIn);
                     },
                   ),
+                  SizedBox(height: 250),
                   ListTile(
-                    leading: Icon(Icons.home),
-                    title: Text('Página Inicial'),
+                    leading: Icon(Icons.logout, color: Colors.red),
+                    title: Text('Sair', style: TextStyle(color: Colors.red)),
                     onTap: () {
-                      // navegar para a página inicial
+                      Navigator.pop(context);
+                      Navigator.pop(context);
                     },
                   ),
                 ]

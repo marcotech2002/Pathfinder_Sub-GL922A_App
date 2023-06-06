@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../../controller/login_controller.dart';
 import '../../style/font.dart';
 import '../../style/palette.dart';
 
@@ -99,10 +100,12 @@ class _TelaCadastroState extends State<TelaCadastro>
                       {
                         if(txtSenha.text == txtSenhaConf.text)
                         {
-                          message('Cadastro realizado com sucesso');
-                          clearTexts();
-                          
-                          Navigator.pop(context);
+                           LoginController().criarConta(
+                            context,
+                            txtNome.text,
+                            txtEmail.text,
+                            txtSenha.text,
+                          );
                         }
                         else
                         {
@@ -133,7 +136,6 @@ class _TelaCadastroState extends State<TelaCadastro>
                     onPressed: () 
                     { 
                       clearTexts();
-                      
                       Navigator.pop(context);
                     },
                     child: Text(

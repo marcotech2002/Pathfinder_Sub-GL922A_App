@@ -8,6 +8,7 @@ import 'package:projeto_app/view/extra/tela_configuracoes.dart';
 import 'package:projeto_app/view/app/tela_listar.dart';
 import 'package:projeto_app/view/extra/tela_sobre.dart';
 
+import '../../controller/login_controller.dart';
 import '../../style/font.dart';
 import '../../style/palette.dart';
 
@@ -175,7 +176,7 @@ class _TelaMenuState extends State<TelaMenu>
                       ),
                       onPressed: () 
                       {
-                        Navigator.pop(context);
+                        LoginController().logout();
                       },
                       child: Text(
                         'Sair',

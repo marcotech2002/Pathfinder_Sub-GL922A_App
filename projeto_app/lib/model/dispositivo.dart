@@ -1,7 +1,26 @@
 class Dispositivo {
-  int id;
+  int uid;
   String nome;
+  String descricao;
   String status;
 
-  Dispositivo({required this.id, required this.nome, required this.status});
+  Dispositivo(this.uid, this.nome, this.descricao, this.status);
+
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'uid': uid,
+      'nome': nome,
+      'descricao': descricao,
+      'status': status
+    };
+  }
+
+  factory Dispositivo.fromJson(Map<String, dynamic> json) {
+    return Dispositivo(
+      json['uid'],
+      json['nome'],
+      json['descricao'],
+      json['status']
+    );
+  }
 }

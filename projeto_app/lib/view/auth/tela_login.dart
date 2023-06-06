@@ -8,8 +8,7 @@ import 'package:projeto_app/style/font.dart';
 import 'package:projeto_app/view/auth/tela_cadastro.dart';
 import 'package:projeto_app/view/auth/tela_recuperacao.dart';
 
-import 'package:projeto_app/view/body/tela_menu.dart';
-import 'package:projeto_app/view/body/tela_principal.dart';
+import '../../controller/login_controller.dart';
 
 class TelaLogin extends StatefulWidget 
 {
@@ -84,10 +83,10 @@ class _TelaLoginState extends State<TelaLogin>
                   else
                   {
                     clearTexts();
-                      
-                    Navigator.push(
+                    LoginController().login(
                       context,
-                      MaterialPageRoute(builder: (context) => TelaPrincipal())
+                      txtEmail.text,
+                      txtSenha.text,
                     );
                   }
                 },
@@ -142,7 +141,7 @@ class _TelaLoginState extends State<TelaLogin>
                         decoration: TextDecoration.underline,
                         fontFamily: "ChivoMono", 
                         fontSize: 10
-                      )
+                      ),
                     ),
                   )  
                 ],

@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../../controller/login_controller.dart';
 import '../../style/font.dart';
 import '../../style/palette.dart';
 
@@ -16,6 +17,7 @@ class TelaRecuperacao extends StatefulWidget
 class _TelaRecuperacaoState extends State<TelaRecuperacao> 
 {
   static var txtEmail = TextEditingController();
+  var txtEmailEsqueceuSenha = TextEditingController();
 
   @override
   Widget build(BuildContext context)
@@ -69,10 +71,12 @@ class _TelaRecuperacaoState extends State<TelaRecuperacao>
                       }
                       else
                       {
+                        txtEmailEsqueceuSenha.text = txtEmail.text;
                         message('Verifique seu Email');
-                        txtEmail.text = '';
-
-                        Navigator.pop(context);
+                        LoginController().esqueceuSenha(
+                          context,
+                          txtEmailEsqueceuSenha.text,
+                        );
                       }
                     },
                     child: Text(

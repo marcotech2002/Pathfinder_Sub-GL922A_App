@@ -37,6 +37,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   easy_splash_screen: ^1.0.4
   flutter_blue_plus: ^1.4.0
+  firebase_core: ^2.13.0
+  cloud_firestore: ^4.7.1
+  firebase_auth: ^4.6.1
 
 dev_dependencies:
   flutter_test:

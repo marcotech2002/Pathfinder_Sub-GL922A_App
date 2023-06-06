@@ -4,11 +4,11 @@ import "package:flutter/material.dart";
 
 import "package:projeto_app/view/app/tela_conectar.dart";
 import "package:projeto_app/view/app/tela_listar.dart";
-import "package:projeto_app/view/body/tela_menu.dart";
 import "package:projeto_app/view/extra/tela_alteracao.dart";
 import "package:projeto_app/view/extra/tela_configuracoes.dart";
 import "package:projeto_app/view/extra/tela_sobre.dart";
 
+import "../../controller/login_controller.dart";
 import "../../style/font.dart";
 import "../../style/palette.dart";
 
@@ -23,6 +23,7 @@ class TelaPrincipal extends StatefulWidget
 class _TelaPrincipalState extends State<TelaPrincipal> 
 {
   var pageController = PageController(initialPage: 0);
+  var usuario_logado = LoginController().usuarioLogado().toString();
 
   @override
   Widget build(BuildContext context) 
@@ -54,7 +55,7 @@ class _TelaPrincipalState extends State<TelaPrincipal>
               child: DrawerHeader(
                 child: CircleAvatar(
                   backgroundColor: Palette().Secondary,
-                  child: Text("MA", style: Font().TitleFont),
+                  child: Text(usuario_logado.characters.first, style: Font().TitleFont),
                 )
               ),
             ),

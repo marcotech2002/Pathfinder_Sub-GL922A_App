@@ -23,8 +23,8 @@ class DispositivosController {
   //
   listar() {
     return FirebaseFirestore.instance
-        .collection('dispositivos')
-        .where('uid', isEqualTo: LoginController().idUsuario());
+        .collection('dispositivos');
+        //.where('uid', isEqualTo: LoginController().idUsuario());
   }
 
   //

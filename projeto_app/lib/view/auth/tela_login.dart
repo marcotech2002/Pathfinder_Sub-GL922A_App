@@ -82,12 +82,12 @@ class _TelaLoginState extends State<TelaLogin>
                   }
                   else
                   {
-                    clearTexts();
                     LoginController().login(
                       context,
                       txtEmail.text,
                       txtSenha.text,
                     );
+                    clearTexts();
                   }
                 },
                 child: Text(

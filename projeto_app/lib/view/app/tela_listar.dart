@@ -77,7 +77,7 @@ class _TelaListaState extends State<TelaLista>
                   );
                 } else {
                   return Center(
-                    child: Text('Nenhuma tarefa encontrada.'),
+                    child: Text('Nenhum dispositivo associado.'),
                   );
                 }
             }

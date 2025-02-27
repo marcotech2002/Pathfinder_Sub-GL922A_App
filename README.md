@@ -4,7 +4,7 @@ Este projeto é um aplicativo mobile desenvolvido em Flutter para gerenciar disp
 
 ## Tecnologias Utilizadas
 
-![Logo do Flutter](https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-logomark-320px.png) ![Logo do Firebase](https://jafapps.com.br/wp-content/uploads/2019/01/jafapps_.png)
+![Logo do Flutter](https://cdn.iconscout.com/icon/free/png-256/flutter-2038877-1720090.png) ![Logo do Firebase](https://cdn.prod.website-files.com/60f1b55d24a86131d2ec40bd/61e9cf7dcadf0932750a2e14_Firebase-logo.png)
 
 ### Frontend - Flutter
 
